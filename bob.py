@@ -40,6 +40,45 @@ def setup():
     Setup_thresholdvoltageBt = Button(Output_Frame, text='Threshold Voltage', command=thresholdvoltage, height=4, width=23)
     Setup_thresholdvoltageBt.pack()
 
+   Detectorlabel = Label(Frame2, text='Detector-2 characteristics', font=("Times New Roman", 20))
+    Detectorlabel.pack(side=LEFT)
+
+    Setup_DetectorBt = Button(Frame2, text='Setup Detector-2', command=setupdetector, bg="orange",fg="black",font="Times 16")
+    Setup_DetectorBt.pack(side =LEFT,fill="both")
+
+    OnInput = Entry(Output_Frame, text="Enter the on time-2", width=32)  # the width refers to the number of characters                     
+    OnInput.pack()
+    OnInput.get()
+    
+    Setup_OntimeBt = Button(Output_Frame, text='On Time', command=Ontime, height=2, width=23)
+    Setup_OntimeBt.pack()
+
+    OffInput = Entry(Output_Frame, text="Enter the off time-2", width=32)  # the width refers to the number of characters
+    OffInput.pack()
+    OffInput.get()
+
+    Setup_OfftimeBt = Button(Output_Frame, text='Off Time', command=Offtime, height=2, width=23)
+    Setup_OfftimeBt.pack()
+
+    VoltageInput = Entry(Output_Frame, text="Enter the threshold voltage-2", width=32)  # the width refers to the number of characters
+    VoltageInput.pack()
+    VoltageInput.get()
+    
+    Setup_thresholdvoltageBt = Button(Output_Frame, text='Threshold Voltage', command=thresholdvoltage, height=2, width=23)
+    Setup_thresholdvoltageBt.pack()
+
+    Frame3 = Frame(Output_Frame)
+    Frame3.pack(side=TOP)
+    
+    DliBiaslabel = Label(Frame3, text='Enter the DLI Bias', font=("Times New Roman", 20))
+    DliBiaslabel.pack(side=LEFT)
+    
+    Bias = Entry(Output_Frame, text="Enter the DLI Bias", width=32)  # the width refers to the number of characters                     
+    Bias.pack()
+    Bias.get()
+    
+    Setup_BiasBt = Button(Output_Frame, text='DLI Bias', command=dlibias, height=2, width=23)
+    Setup_BiasBt.pack()
     return
 
 def setupdetector():
@@ -55,6 +94,9 @@ def thresholdvoltage():
     return
 
 def Authenticate():
+    return
+
+def dlibias():
     return
 
 def set_key():
