@@ -10,75 +10,124 @@ from tkinter import ttk
 
 
 def setup():
+  
     Frame1 = Frame(Output_Frame)
     Frame1.pack(side=TOP)
 
     Detectorlabel = Label(Frame1, text='Detector-1 characteristics', font=("Times New Roman", 20))
     Detectorlabel.pack(side=LEFT)
 
-    Setup_DetectorBt = Button(Frame1, text='Setup Detector-1', command=setupdetector, bg="orange",fg="black",font="Times 16")
-    Setup_DetectorBt.pack(side =LEFT,fill="both")
+    Setup_Ontime_label = Label(Output_Frame, text='On-Time',height=1, width=23)
+    Setup_Ontime_label.pack()
 
     OnInput = Entry(Output_Frame, text="Enter the on time", width=32)  # the width refers to the number of characters                     
     OnInput.pack()
     OnInput.get()
-    
-    Setup_OntimeBt = Button(Output_Frame, text='On Time', command=Ontime, height=4, width=23)
-    Setup_OntimeBt.pack()
+
+    Setup_Offtime_label = Label(Output_Frame, text='Off-Time', height=1, width=23)
+    Setup_Offtime_label.pack()
 
     OffInput = Entry(Output_Frame, text="Enter the off time", width=32)  # the width refers to the number of characters
     OffInput.pack()
     OffInput.get()
 
-    Setup_OfftimeBt = Button(Output_Frame, text='Off Time', command=Offtime, height=4, width=23)
-    Setup_OfftimeBt.pack()
+    Setup_thresholdvoltage_label = Label(Output_Frame, text='Threshold-Voltage', height=1, width=23)
+    Setup_thresholdvoltage_label.pack()
 
     VoltageInput = Entry(Output_Frame, text="Enter the threshold voltage", width=32)  # the width refers to the number of characters
     VoltageInput.pack()
     VoltageInput.get()
-    
-    Setup_thresholdvoltageBt = Button(Output_Frame, text='Threshold Voltage', command=thresholdvoltage, height=4, width=23)
-    Setup_thresholdvoltageBt.pack()
 
-   Detectorlabel = Label(Frame2, text='Detector-2 characteristics', font=("Times New Roman", 20))
+    Setup_DetectorBt = Button(Frame1, text='Setup Detector-1', command=setup, bg="orange",fg="black",font="Times 16")
+    Setup_DetectorBt.pack(side =LEFT,fill="both")
+      
+    print(f"{OnInput.get()}")
+    print(f"{OffInput.get()}")
+    print(f"{VoltageInput.get()}")
+    
+    Frame2 = Frame(Output_Frame)
+    Frame2.pack(side=TOP)
+    
+    Detectorlabel = Label(Frame2, text='Detector-2 characteristics', font=("Times New Roman", 20))
     Detectorlabel.pack(side=LEFT)
 
-    Setup_DetectorBt = Button(Frame2, text='Setup Detector-2', command=setupdetector, bg="orange",fg="black",font="Times 16")
+    Setup_DetectorBt = Button(Frame2, text='Setup Detector-2', command=setup, bg="orange",fg="black",font="Times 16")
     Setup_DetectorBt.pack(side =LEFT,fill="both")
+
+    
+    Setup_Ontime_label = Label(Output_Frame, text='On-Time', height=1, width=23)
+    Setup_Ontime_label.pack()
 
     OnInput = Entry(Output_Frame, text="Enter the on time-2", width=32)  # the width refers to the number of characters                     
     OnInput.pack()
     OnInput.get()
-    
-    Setup_OntimeBt = Button(Output_Frame, text='On Time', command=Ontime, height=2, width=23)
-    Setup_OntimeBt.pack()
+
+    Setup_Offtime_label = Label(Output_Frame, text='Off-Time', height=1, width=23)
+    Setup_Offtime_label.pack()
 
     OffInput = Entry(Output_Frame, text="Enter the off time-2", width=32)  # the width refers to the number of characters
     OffInput.pack()
     OffInput.get()
 
-    Setup_OfftimeBt = Button(Output_Frame, text='Off Time', command=Offtime, height=2, width=23)
-    Setup_OfftimeBt.pack()
+    Setup_thresholdvoltage_label = Label(Output_Frame, text='Threshold-Voltage',height=1, width=23)
+    Setup_thresholdvoltage_label.pack()
 
     VoltageInput = Entry(Output_Frame, text="Enter the threshold voltage-2", width=32)  # the width refers to the number of characters
     VoltageInput.pack()
     VoltageInput.get()
-    
-    Setup_thresholdvoltageBt = Button(Output_Frame, text='Threshold Voltage', command=thresholdvoltage, height=2, width=23)
-    Setup_thresholdvoltageBt.pack()
+
+    print(f"{OnInput.get()}")
+    print(f"{OffInput.get()}")
+    print(f"{VoltageInput.get()}")
 
     Frame3 = Frame(Output_Frame)
     Frame3.pack(side=TOP)
+
+    DliBias_label = Label(Frame3, text='DLI Bias', font=("Times New Roman", 20))
+    DliBias_label.pack(side=LEFT)
     
-    DliBiaslabel = Label(Frame3, text='Enter the DLI Bias', font=("Times New Roman", 20))
-    DliBiaslabel.pack(side=LEFT)
-    
-    Bias = Entry(Output_Frame, text="Enter the DLI Bias", width=32)  # the width refers to the number of characters                     
+    Bias = Entry(Output_Frame, text="DLI Bias", width=32)  # the width refers to the number of characters                     
     Bias.pack()
     Bias.get()
+
+    Setup_DliBiasBt = Button(Frame3, text='Value', command= setup, bg="orange",fg="black",font="Times 16")
+    Setup_DliBiasBt.pack(side =LEFT,fill="both")
+
+    print(f"{Bias.get()}")
     
-    Setup_BiasBt = Button(Output_Frame, text='DLI Bias', command=dlibias, height=2, width=23)
-    Setup_BiasBt.pack()
+    Frame4 = Frame(Output_Frame)
+    Frame4.pack(side=TOP)
+    
+    GateLocation_label = Label(Frame4, text='Gate Location', font=("Times New Roman", 20))
+    GateLocation_label.pack(side=LEFT)
+
+    Setup_Location_label = Label(Output_Frame, text='Min-Delay', height=1, width=23)
+    Setup_Location_label.pack()
+    
+    mindelay = Entry(Output_Frame, text="Enter the Min-Delay", width=32)  # the width refers to the number of characters                     
+    mindelay.pack()
+    mindelay.get()
+
+    Setup_Location_label = Label(Output_Frame, text='Max-Delay', height=1, width=23)
+    Setup_Location_label.pack()
+
+    maxdelay = Entry(Output_Frame, text="Enter the Max-Delay", width=32)  # the width refers to the number of characters                     
+    maxdelay.pack()
+    maxdelay.get()
+
+    Setup_Location_label = Label(Output_Frame, text='Step-Size',height=1, width=23)
+    Setup_Location_label.pack()
+
+    stepsize = Entry(Output_Frame, text="Enter the Step-Size", width=32)  # the width refers to the number of characters                     
+    stepsize.pack()
+    stepsize.get()
+
+    Setup_LocationBt = Button(Frame4, text ='Run', command = setup, bg="orange",fg="black",font="Times 16")
+    Setup_LocationBt.pack(side =LEFT,fill="both")
+
+    print(f"{mindelay.get()}")
+    print(f"{maxdelay.get()}")
+    print(f"{stepsize.get()}")
     return
 
 def setupdetector():
@@ -96,12 +145,23 @@ def thresholdvoltage():
 def Authenticate():
     return
 
-def dlibias():
-    return
-
 def set_key():
     return
 
+def dlibias():
+    return
+
+def gatelocation():
+    return
+
+def mindelay():
+    return
+
+def maxdelay():
+    return
+
+def stepsize():
+    return
 
 def get_key():
     return
@@ -115,7 +175,7 @@ def securekey():
 ## main frame
 Root = Tk()
 Root.title('BOB QKD SYSTEM')
-Root.minsize(500, 420)
+Root.minsize(500, 320)
 Root.maxsize(1444, 881)
 Root.configure(bg="black")
 Root.resizable(1, 1)
