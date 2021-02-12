@@ -1,4 +1,3 @@
-# Author Ashish
 # Usage BOB QKD GUI
 # Version 1
 # Basic GUI version with all the buttons for the controls
@@ -17,83 +16,69 @@ def setup():
     Detectorlabel = Label(Frame1, text='Detector-1 characteristics', font=("Times New Roman", 20))
     Detectorlabel.pack(side=LEFT)
 
+    Setup_DetectorBt = Button(Frame1, text='Setup Detector-1', command=setupdetector1, bg="orange",fg="black",font="Times 16")
+    Setup_DetectorBt.pack(side =LEFT,fill="both")
+
     Setup_Ontime_label = Label(Output_Frame, text='On-Time',height=1, width=23)
     Setup_Ontime_label.pack()
 
-    OnInput = Entry(Output_Frame, text="Enter the on time", width=32)  # the width refers to the number of characters                     
+    OnInput = Entry(Output_Frame, text="Enter the on time", width=32,font=("Arial",16), fg="red" )  # the width refers to the number of characters                     
     OnInput.pack()
-    OnInput.get()
-
+    
     Setup_Offtime_label = Label(Output_Frame, text='Off-Time', height=1, width=23)
     Setup_Offtime_label.pack()
 
-    OffInput = Entry(Output_Frame, text="Enter the off time", width=32)  # the width refers to the number of characters
+    OffInput = Entry(Output_Frame, text="Enter the off time", width=32,font=("Arial",16), fg="red" )  # the width refers to the number of characters
     OffInput.pack()
-    OffInput.get()
 
     Setup_thresholdvoltage_label = Label(Output_Frame, text='Threshold-Voltage', height=1, width=23)
     Setup_thresholdvoltage_label.pack()
 
-    VoltageInput = Entry(Output_Frame, text="Enter the threshold voltage", width=32)  # the width refers to the number of characters
+    VoltageInput = Entry(Output_Frame, text="Enter the threshold voltage", width=32,font=("Arial",16), fg="red" )  # the width refers to the number of characters
     VoltageInput.pack()
-    VoltageInput.get()
 
-    Setup_DetectorBt = Button(Frame1, text='Setup Detector-1', command=setup, bg="orange",fg="black",font="Times 16")
-    Setup_DetectorBt.pack(side =LEFT,fill="both")
-      
-    print(f"{OnInput.get()}")
-    print(f"{OffInput.get()}")
-    print(f"{VoltageInput.get()}")
-    
     Frame2 = Frame(Output_Frame)
     Frame2.pack(side=TOP)
-    
+
     Detectorlabel = Label(Frame2, text='Detector-2 characteristics', font=("Times New Roman", 20))
     Detectorlabel.pack(side=LEFT)
 
-    Setup_DetectorBt = Button(Frame2, text='Setup Detector-2', command=setup, bg="orange",fg="black",font="Times 16")
+    Setup_DetectorBt = Button(Frame2, text='Setup Detector-2', command=setupdetector2, bg="orange",fg="black",font="Times 16")
     Setup_DetectorBt.pack(side =LEFT,fill="both")
 
-    
     Setup_Ontime_label = Label(Output_Frame, text='On-Time', height=1, width=23)
     Setup_Ontime_label.pack()
 
-    OnInput = Entry(Output_Frame, text="Enter the on time-2", width=32)  # the width refers to the number of characters                     
+    OnInput = Entry(Output_Frame, text="Enter the on time-2", width=32,font=("Arial",16), fg="red" )  # the width refers to the number of characters                     
     OnInput.pack()
     OnInput.get()
 
     Setup_Offtime_label = Label(Output_Frame, text='Off-Time', height=1, width=23)
     Setup_Offtime_label.pack()
 
-    OffInput = Entry(Output_Frame, text="Enter the off time-2", width=32)  # the width refers to the number of characters
+    OffInput = Entry(Output_Frame, text="Enter the off time-2", width=32,font=("Arial",16), fg="red" )  # the width refers to the number of characters
     OffInput.pack()
     OffInput.get()
-
+   
     Setup_thresholdvoltage_label = Label(Output_Frame, text='Threshold-Voltage',height=1, width=23)
     Setup_thresholdvoltage_label.pack()
 
-    VoltageInput = Entry(Output_Frame, text="Enter the threshold voltage-2", width=32)  # the width refers to the number of characters
+    VoltageInput = Entry(Output_Frame, text="Enter the threshold voltage-2", width=32,font=("Arial",16), fg="red" )  # the width refers to the number of characters
     VoltageInput.pack()
     VoltageInput.get()
-
-    print(f"{OnInput.get()}")
-    print(f"{OffInput.get()}")
-    print(f"{VoltageInput.get()}")
-
+    
     Frame3 = Frame(Output_Frame)
     Frame3.pack(side=TOP)
 
     DliBias_label = Label(Frame3, text='DLI Bias', font=("Times New Roman", 20))
     DliBias_label.pack(side=LEFT)
     
-    Bias = Entry(Output_Frame, text="DLI Bias", width=32)  # the width refers to the number of characters                     
+    Bias = Entry(Output_Frame, text="DLI Bias", width=32,font=("Arial",16), fg="red" )  # the width refers to the number of characters                     
     Bias.pack()
     Bias.get()
 
-    Setup_DliBiasBt = Button(Frame3, text='Value', command= setup, bg="orange",fg="black",font="Times 16")
+    Setup_DliBiasBt = Button(Frame3, text='Value', command= dlibias, bg="orange",fg="black",font="Times 16")
     Setup_DliBiasBt.pack(side =LEFT,fill="both")
-
-    print(f"{Bias.get()}")
     
     Frame4 = Frame(Output_Frame)
     Frame4.pack(side=TOP)
@@ -104,33 +89,48 @@ def setup():
     Setup_Location_label = Label(Output_Frame, text='Min-Delay', height=1, width=23)
     Setup_Location_label.pack()
     
-    mindelay = Entry(Output_Frame, text="Enter the Min-Delay", width=32)  # the width refers to the number of characters                     
+    mindelay = Entry(Output_Frame, text="Enter the Min-Delay", width=32,font=("Arial",16), fg="red" )  # the width refers to the number of characters                     
     mindelay.pack()
     mindelay.get()
 
     Setup_Location_label = Label(Output_Frame, text='Max-Delay', height=1, width=23)
     Setup_Location_label.pack()
 
-    maxdelay = Entry(Output_Frame, text="Enter the Max-Delay", width=32)  # the width refers to the number of characters                     
+    maxdelay = Entry(Output_Frame, text="Enter the Max-Delay", width=32,font=("Arial",16), fg="red" )  # the width refers to the number of characters                     
     maxdelay.pack()
     maxdelay.get()
 
     Setup_Location_label = Label(Output_Frame, text='Step-Size',height=1, width=23)
     Setup_Location_label.pack()
 
-    stepsize = Entry(Output_Frame, text="Enter the Step-Size", width=32)  # the width refers to the number of characters                     
+    stepsize = Entry(Output_Frame, text="Enter the Step-Size", width=32,font=("Arial",16), fg="red" )  # the width refers to the number of characters                     
     stepsize.pack()
     stepsize.get()
 
-    Setup_LocationBt = Button(Frame4, text ='Run', command = setup, bg="orange",fg="black",font="Times 16")
+    Setup_LocationBt = Button(Frame4, text ='Run', command = gatelocation, bg="orange",fg="black",font="Times 16")
     Setup_LocationBt.pack(side =LEFT,fill="both")
-
-    print(f"{mindelay.get()}")
-    print(f"{maxdelay.get()}")
-    print(f"{stepsize.get()}")
     return
 
-def setupdetector():
+def setupdetector1():
+    s1 = OnInput.get()
+    print(s1)
+    
+    s2 = OffInput.get()
+    print(s2)
+    
+    s3 = VoltageInput.get()
+    print(s3)
+    return
+
+def setupdetector2():
+    p1 = OnInput.get()
+    print(p1)
+    
+    p2 = OffInput.get()
+    print(p2)
+    
+    p3 = VoltageInput.get()
+    print(p3)
     return
 
 def Ontime():
@@ -149,9 +149,13 @@ def set_key():
     return
 
 def dlibias():
+    print(f"{Bias.get()}")
     return
 
 def gatelocation():
+    print(f"{mindelay.get()}")
+    print(f"{maxdelay.get()}")
+    print(f"{stepsize.get()}")
     return
 
 def mindelay():
